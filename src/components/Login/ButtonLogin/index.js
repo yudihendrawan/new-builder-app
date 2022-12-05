@@ -26,9 +26,6 @@ const ButtonLogin = (props) => {
                 <TouchableOpacity>
                     <Text style={{ fontWeight: 'bold' }}>Dont have an account?</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text style={{ fontWeight: 'bold' }}>Forgot password</Text>
-                </TouchableOpacity>
             </View>
         </View>
     )

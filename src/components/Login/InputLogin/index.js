@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 const InputLogin = (props) => {
 
     return (
+
         <View>
             <View style={{
                 flexDirection: 'row',
