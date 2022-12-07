@@ -1,19 +1,17 @@
-import React, { useState } from "react";
-import { View, Text, Image, StatusBar, StyleSheet } from "react-native";
-import ButtonLogin from "./src/components/Login/ButtonLogin";
-import InputLogin from "./src/components/Login/InputLogin";
-import Navigation from "./src/navigation/Navigation";
+import { NavigationContainer } from "@react-navigation/native";
+import React from "react";
+
+import Router from "./src/router";
+
+
 const App = () => {
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
   return (
-    <Navigation />
+    <NavigationContainer>
+      <Router />
+    </NavigationContainer>
   )
 }
-
-
 
 
 export default App;

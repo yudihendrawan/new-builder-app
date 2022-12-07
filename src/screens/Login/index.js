@@ -1,28 +1,71 @@
 import React, { useState } from "react";
-import { View, Text, Image, StatusBar, StyleSheet } from "react-native";
-import ButtonLogin from "../../components/Login/ButtonLogin";
-import InputLogin from "../../components/Login/InputLogin";
+import { View, Text, Image, StatusBar, StyleSheet, TouchableOpacity, Alert } from "react-native";
+import InputLogin from "../../components/LoginButton/InputLogin";
 
-
-
-const Login = () => {
+const Login = ({ navigation }) => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    return <View style={styles.container}>
-        <StatusBar backgroundColor={'transparent'} barStyle="dark-content" />
-        <View style={styles.viewImage}>
-            <Image source={require('../../img/builder.jpg')} style={styles.imageCover} />
-        </View>
-        <View style={styles.viewLogin}>
-            <Text style={styles.textLogin}>Login</Text>
-        </View>
-        <InputLogin state={email} set={setEmail} icon='envelope' placeholder='Email' isPassword={false} />
-        <InputLogin state={password} set={setPassword} icon='lock' placeholder='Password' isPassword={true} />
+    const AuthLogin = async () => {
+        const response = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCOTTiPBA9Kh3BLuyc6yuMbg0ls2mQXKDw', {
+            method: 'POST',
+            header: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: email,
+                password: password,
+                returnSecureToken: true
+            })
+        })
+        const resData = await response.json()
+        if (response.ok) {
+            navigation.replace('Welcome')
+        } else {
+            Alert.alert('Error', resData.error.message, [{
+                text: 'okay'
+            }])
+        }
+    }
 
-        <ButtonLogin text="Login" />
-    </View>
+    return (
+        <View style={styles.container}>
+            <StatusBar backgroundColor={'transparent'} barStyle="dark-content" />
+            <View style={styles.viewImage}>
+                <Image source={require('../../img/builder.jpg')} style={styles.imageCover} />
+            </View>
+            <View style={styles.viewLogin}>
+                <Text style={styles.textLogin}>Login</Text>
+            </View>
+            <InputLogin state={email} set={setEmail} icon='envelope' placeholder='Email' isPassword={false} />
+            <InputLogin state={password} set={setPassword} icon='lock' placeholder='Password' isPassword={true} />
+
+            <TouchableOpacity onPress={AuthLogin}
+                style={{
+                    backgroundColor: '#2396F2',
+                    marginHorizontal: 20,
+                    marginTop: 10,
+                    borderRadius: 15,
+                    elevation: 5,
+                    padding: 10
+                }}>
+
+                <Text style={{
+                    fontWeight: 'bold',
+                    textAlign: 'center',
+                    color: 'white',
+                    fontSize: 18,
+                }}>Login</Text>
+            </TouchableOpacity>
+            <View style={{ marginLeft: 25, marginTop: 10, flex: 1, flexDirection: 'row' }}>
+                <Text style={{ fontWeight: 'bold' }}>Dont have an account?</Text>
+                <TouchableOpacity onPress={() => navigation.replace('Register')}>
+                    <Text style={{ fontWeight: 'bold', color: '#1d4ed8' }}>Register</Text>
+                </TouchableOpacity>
+            </View>
+        </View>
+    )
 }
 
 const styles = StyleSheet.create({

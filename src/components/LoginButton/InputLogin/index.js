@@ -36,6 +36,7 @@ const InputLogin = (props) => {
                     placeholder={props.placeholder}
                     onChangeText={text => props.set(text)}
                     secureTextEntry={props.isPassword}
+                    autoCapitalize='none'
                 />
             </View>
         </View>
