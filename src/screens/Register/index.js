@@ -1,35 +1,48 @@
 import React, { useState } from "react";
-import { View, Text, Image, StatusBar, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, Image, StatusBar, StyleSheet, TouchableOpacity, Alert, ActivityIndicator } from "react-native";
 import InputLogin from "../../components/LoginButton/InputLogin";
 
 const Register = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const AuthSign = async () => {
-        const response = await fetch("https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCOTTiPBA9Kh3BLuyc6yuMbg0ls2mQXKDw", {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify({
-                email: email,
-                password: password,
-                returnSecureToken: true
+        try {
+            setLoading(true);
+            const response = await fetch("https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCOTTiPBA9Kh3BLuyc6yuMbg0ls2mQXKDw", {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: email,
+                    password: password,
+                    returnSecureToken: true
+                })
             })
-        })
-        const restData = await response.json()
-        console.log(restData)
+            const resData = await response.json()
+            if (response.ok) {
+                navigation.replace('Login');
+            } else {
+                Alert.alert('Error', resData.error.message, [{
+                    text: 'Okay'
+                }])
+            }
+            setLoading(false)
+        } catch (error) {
+            Alert.alert(error, [{
+                text: 'Okay'
+            }])
+            setLoading(false)
+        }
     }
 
     return (
         <View style={styles.container}>
             <StatusBar backgroundColor={'transparent'} barStyle="dark-content" />
             <View style={styles.viewImage}>
-                <Image source={require('../../img/register.jpg')} style={styles.imageCover} />
-            </View>
-            <View style={styles.viewLogin}>
-                <Text style={styles.textLogin}>Register</Text>
+                <Image source={require('../../../assets/img/register.jpg')} style={styles.imageCover} />
             </View>
 
             <InputLogin state={email} set={setEmail} icon='envelope' placeholder='Email' isPassword={false} />
@@ -44,12 +57,12 @@ const Register = ({ navigation }) => {
                     padding: 10
                 }}>
 
-                <Text style={{
+                {loading ? <ActivityIndicator size="small" color="white" /> : <Text style={{
                     fontWeight: 'bold',
                     textAlign: 'center',
                     color: 'white',
                     fontSize: 18,
-                }} >Register</Text>
+                }} >Register</Text>}
             </TouchableOpacity>
 
             <View style={{ marginLeft: 25, marginTop: 10, flex: 1, flexDirection: 'row' }}>
