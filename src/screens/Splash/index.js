@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, Image } from "react-native";
 const Splash = ({ navigation }) => {
     useEffect(() => {
         setTimeout(() => {
-            navigation.replace('Login');
+            navigation.replace('MainApp');
         }, 2000)
     });
     return (
@@ -19,15 +19,16 @@ const styles = StyleSheet.create({
         backgroundColor: '#F9D82B',
         height: "100%",
         width: "100%",
-        flex: 1,
-        justifyContent: "center"
+        flex: 3,
+        justifyContent: "center",
     },
     imageSplash: {
         justifyContent: "center",
         alignItems: "center",
-        width: 400,
-        height: 450,
-        marginLeft: 8
+        width: 180,
+        height: 200,
+        marginLeft: 120,
+        objectFit: "cover"
     }
 })
 export default Splash;

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { View, Text, Image, StatusBar, StyleSheet, TouchableOpacity, Alert, ActivityIndicator } from "react-native";
-import InputLogin from "../../components/LoginButton/InputLogin";
+import { GambarBuilding } from "../../../assets";
+import InputLogin from "../../components/kecil/LoginButton/InputLogin";
+
 
 const Login = ({ navigation }) => {
 
@@ -83,7 +85,16 @@ const styles = StyleSheet.create({
     },
     viewImage: {
         width: "100%",
-        height: "50%"
+        height: "50%",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
     },
     imageCover: {
         width: "100%",
@@ -93,7 +104,7 @@ const styles = StyleSheet.create({
     },
     viewLogin: {
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     textLogin: {
         fontSize: 20,

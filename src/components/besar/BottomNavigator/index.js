@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
+import TabItem from '../TabItem';
 
 const BottomNavigator = ({ state, descriptors, navigation }) => {
     return (
@@ -36,20 +37,13 @@ const BottomNavigator = ({ state, descriptors, navigation }) => {
                 };
 
                 return (
-                    <TouchableOpacity
+                    <TabItem
                         key={index}
-                        accessibilityRole="button"
-                        accessibilityState={isFocused ? { selected: true } : {}}
-                        accessibilityLabel={options.tabBarAccessibilityLabel}
-                        testID={options.tabBarTestID}
+                        label={label}
+                        isFocused={isFocused}
                         onPress={onPress}
                         onLongPress={onLongPress}
-                        style={{ flex: 1 }}
-                    >
-                        <Text style={{ color: isFocused ? '#673ab7' : '#222' }}>
-                            {label}
-                        </Text>
-                    </TouchableOpacity>
+                    />
                 );
             })}
         </View>
@@ -62,11 +56,24 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         backgroundColor: "#F9D82B",
-        paddingBottom: 40,
-        paddingTop: 20,
-        paddingHorizontal: 20,
+        paddingBottom: 10,
+        paddingTop: 10,
+        paddingHorizontal: 50,
+        marginBottom: 30,
         justifyContent: "space-between",
         borderTopRightRadius: 30,
-        borderTopLeftRadius: 30
+        borderTopLeftRadius: 30,
+        borderBottomLeftRadius: 30,
+        borderBottomRightRadius: 30,
+        marginHorizontal: 10,
+        alignItems: "center",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
     }
 })

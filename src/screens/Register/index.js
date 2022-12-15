@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, Image, StatusBar, StyleSheet, TouchableOpacity, Alert, ActivityIndicator } from "react-native";
-import InputLogin from "../../components/LoginButton/InputLogin";
+import InputLogin from "../../components/kecil/LoginButton/InputLogin";
 
 const Register = ({ navigation }) => {
     const [email, setEmail] = useState('');
@@ -83,7 +83,16 @@ const styles = StyleSheet.create({
     },
     viewImage: {
         width: "100%",
-        height: "50%"
+        height: "50%",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
     },
     imageCover: {
         width: "100%",
