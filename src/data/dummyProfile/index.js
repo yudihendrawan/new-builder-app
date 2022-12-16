@@ -1,11 +1,11 @@
-import { FotoProfile } from "../../assets";
+import { PYudi } from "../../../assets";
 
 export const dummyProfile = {
-    nama: 'Muhammad Afifuddin',
-    email: 'afifbasya@gmail.com',
+    nama: 'Yudihendrawan',
+    email: 'yudihendrawan@gmail.com',
     nomerHp: '085712312333',
-    alamat: 'Jl. Menoreh Tengah X/ 22 Sampangan',
-    kota: 'Semarang',
-    provinsi: 'Jawa Tengah',
-    avatar: FotoProfile
+    alamat: 'Jl. Putra Panca',
+    kota: 'Pekanbaru',
+    provinsi: 'Riau',
+    avatar: PYudi
 };

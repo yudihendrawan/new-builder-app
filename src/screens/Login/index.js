@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, Image, StatusBar, StyleSheet, TouchableOpacity, Alert, ActivityIndicator } from "react-native";
 import { GambarBuilding } from "../../../assets";
-import InputLogin from "../../components/kecil/LoginButton/InputLogin";
+import { InputLogin } from "../../components";
 
 
 const Login = ({ navigation }) => {

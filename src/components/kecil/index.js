@@ -1,7 +1,7 @@
-import LoginButton from './LoginButton/InputLogin'
-import RegisterButton from './RegisterButton/Input'
+import InputLogin from './InputLogin'
+import CardMenu from './CardMenu'
 
 export {
-    LoginButton,
-    RegisterButton
+    InputLogin,
+    CardMenu
 }

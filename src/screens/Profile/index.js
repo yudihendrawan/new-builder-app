@@ -1,38 +1,55 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
-import React from 'react';
+import React, { Component } from 'react';
+import { responsiveHeight, responsiveWidth } from "react-native-responsive-dimensions";
+import { dummyProfile, menus } from '../../data';
+import { RFValue } from "react-native-responsive-fontsize";
+import { heightMobileUI } from '../../../assets';
+import { ListMenu } from '../../components';
 
-const Profile = () => {
-    return (
-        <View style={styles.page}>
-            <View style={styles.container}>
-                <Image style={styles.avatar} source={require('../../../assets/img/logoapp.png')} />
-                <View style={styles.profile}>
-                    <Text style={styles.nama} >Yudi Hendrawan</Text>
-                    <Text >085374402553</Text>
-                    <Text >Jln. Putra Panca</Text>
+
+export default class Profile extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            profile: dummyProfile,
+            menus: menus
+        }
+    }
+    render() {
+        const { profile } = this.state;
+        return (
+            <View style={styles.page}>
+                <View style={styles.container}>
+                    <Image style={styles.avatar} source={profile.avatar} />
+                    <View style={styles.profile}>
+                        <Text style={styles.nama} >{profile.nama}</Text>
+                        <Text style={styles.nomerHp} >{profile.nomerHp}</Text>
+                        <Text style={styles.alamat} >{profile.alamat}</Text>
+                    </View>
+                    <ListMenu menus={menus} navigation={this.props.navigation} />
                 </View>
-            </View>
-        </View >
-    )
+            </View >
+        );
+    }
 }
-
-export default Profile
 
 const styles = StyleSheet.create({
     page: {
         flex: 1,
+        alignItems: 'center',
     },
     container: {
-        backgroundColor: "#FFF1A6",
-        width: "100%",
-        height: "75%",
+        backgroundColor: "#F9D82B",
+        width: responsiveWidth(95),
+        height: responsiveHeight(60),
         position: "absolute",
         borderBottomLeftRadius: 40,
-        borderTopLeftRadius: 40,
+        borderBottomRightRadius: 40,
         bottom: 0,
         borderTopLeftRadius: 40,
         borderTopRightRadius: 40,
-        marginBottom: 10,
+        margin: 10,
         shadowOffset: {
             width: 0,
             height: 2,
@@ -44,10 +61,10 @@ const styles = StyleSheet.create({
 
     },
     avatar: {
-        width: "40%",
-        height: "30%",
+        width: responsiveWidth(35),
+        height: responsiveWidth(35),
         alignSelf: "center",
-        marginTop: -50,
+        marginTop: -responsiveWidth(15),
         borderRadius: 100,
         backgroundColor: "white"
     },
@@ -56,7 +73,13 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     nama: {
-        fontSize: "bold",
-        fontSize: 24
+        fontWeight: "bold",
+        fontSize: RFValue(24, heightMobileUI)
+    },
+    nomerHp: {
+        fontSize: RFValue(18, heightMobileUI)
+    },
+    alamat: {
+        fontSize: RFValue(18, heightMobileUI)
     }
 })
