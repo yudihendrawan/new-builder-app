@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from 'react
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { responsiveHeight } from 'react-native-responsive-dimensions';
+import { colors } from '../../../../assets';
 
 const CardMenu = ({ menu, navigation }) => {
     return (
@@ -10,7 +11,7 @@ const CardMenu = ({ menu, navigation }) => {
                 {menu.gambar}
                 <Text style={styles.text}>{menu.nama}</Text>
             </View>
-            <Icon name='chevron-right' size={30} color={'black'} />
+            <Icon name='chevron-right' size={30} color={colors.primaryText} />
         </TouchableOpacity>
     )
 }
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         marginTop: 15,
         justifyContent: 'space-between',
-        backgroundColor: '#F9D82B',
+        backgroundColor: colors.lightPrimaryColor,
         shadowOffset: {
             width: 0,
             height: 2,

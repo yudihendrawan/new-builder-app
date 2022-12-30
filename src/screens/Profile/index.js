@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { responsiveHeight, responsiveWidth } from "react-native-responsive-dimensions";
 import { dummyProfile, menus } from '../../data';
 import { RFValue } from "react-native-responsive-fontsize";
-import { heightMobileUI } from '../../../assets';
+import { colors, heightMobileUI } from '../../../assets';
 import { ListMenu } from '../../components';
 
 
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     container: {
-        backgroundColor: "#F9D82B",
+        backgroundColor: colors.primary,
         width: responsiveWidth(95),
         height: responsiveHeight(60),
         position: "absolute",

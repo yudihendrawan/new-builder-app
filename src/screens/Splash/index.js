@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
+import { colors } from "../../../assets/utils/colors";
 
 const Splash = ({ navigation }) => {
     useEffect(() => {
@@ -16,7 +17,7 @@ const Splash = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     imageContainer: {
-        backgroundColor: '#F9D82B',
+        backgroundColor: colors.primary,
         height: "100%",
         width: "100%",
         flex: 3,

@@ -1,2 +1,3 @@
 export const heightMobileUI = 896;
-export const WidthMobileUI = 414;
+export const widthMobileUI = 414;
+

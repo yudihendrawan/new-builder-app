@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 import TabItem from '../TabItem';
+import { colors } from '../../../../assets';
 
 const BottomNavigator = ({ state, descriptors, navigation }) => {
     return (
@@ -55,7 +56,7 @@ export default BottomNavigator
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        backgroundColor: "#F9D82B",
+        backgroundColor: colors.primary,
         paddingBottom: 10,
         paddingTop: 10,
         paddingHorizontal: 50,

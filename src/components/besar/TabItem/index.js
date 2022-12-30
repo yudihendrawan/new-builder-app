@@ -1,13 +1,14 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
+import { colors } from '../../../../assets';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 
 const TabItem = ({ isFocused, onLongPress, onPress, label }) => {
     const IconDashboard = () => {
-        if (label === "Home") return isFocused ? <Icon name="home" size={35} color="#ea580c" /> : <Icon name="home" size={20} color="black" />
-        if (label === "Order") return isFocused ? <Icon name="shopping-cart" size={35} color="#ea580c" /> : <Icon name="shopping-cart" size={20} color="black" />
-        if (label === "Profile") return isFocused ? <Icon name="user" size={35} color="#ea580c" /> : <Icon name="user" size={20} color="black" />
+        if (label === "Home") return isFocused ? <Icon name="home" size={35} color={colors.activeButton} /> : <Icon name="home" size={20} color="black" />
+        if (label === "Order") return isFocused ? <Icon name="shopping-cart" size={35} color={colors.activeButton} /> : <Icon name="shopping-cart" size={20} color="black" />
+        if (label === "Profile") return isFocused ? <Icon name="user" size={35} color={colors.activeButton} /> : <Icon name="user" size={20} color="black" />
     }
     return (
         <TouchableOpacity

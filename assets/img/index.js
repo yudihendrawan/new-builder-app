@@ -5,6 +5,8 @@ import GambarBuilding from './newbuilding.png';
 import GambarRegis from './register.jpg';
 import GambarRenov from './renovation.png';
 import PYudi from './profileyudi.jpg'
+import Banner1 from './slider1.png';
+import Banner2 from './slider2.png';
 
 export {
     PYudi,
@@ -13,5 +15,7 @@ export {
     GambarBuilding,
     GambarRegis,
     GambarRenov,
-    GambarBuilder
+    GambarBuilder,
+    Banner1,
+    Banner2
 };
