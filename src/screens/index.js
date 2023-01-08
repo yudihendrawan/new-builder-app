@@ -6,6 +6,8 @@ import Home from "./Home";
 import Order from "./Order";
 import Profile from "./Profile";
 import EditProfile from "./EditProfile";
+import RenovasiMenu from './RenovasiMenu';
+import BaruMenu from './BaruMenu';
 
 
-export { Splash, Welcome, Register, Login, Home, Profile, Order, EditProfile };
+export { Splash, Welcome, Register, Login, Home, Profile, Order, EditProfile, RenovasiMenu, BaruMenu };

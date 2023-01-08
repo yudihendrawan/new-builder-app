@@ -38,12 +38,14 @@ const styles = StyleSheet.create({
     page: {
         flex: 1,
         alignItems: 'center',
+        backgroundColor: colors.lightPrimaryColor
     },
     container: {
-        backgroundColor: colors.primary,
+        backgroundColor: 'white',
         width: responsiveWidth(95),
         height: responsiveHeight(60),
         position: "absolute",
+        backgroundColor: colors.primary,
         borderBottomLeftRadius: 40,
         borderBottomRightRadius: 40,
         bottom: 0,

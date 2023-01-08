@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,
-        flex: 2
+        flex: 1
     },
     bannerText: {
         height: 100,
@@ -54,7 +54,8 @@ const styles = StyleSheet.create({
 
     },
     bannerImage: {
-        width: "30%"
+        width: "30%",
+        height: '20%'
     },
     tagline: {
         fontSize: RFValue(36),

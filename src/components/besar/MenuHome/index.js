@@ -1,26 +1,24 @@
 import { Text, StyleSheet, View, TouchableOpacity, Image } from 'react-native'
-import React, { Component } from 'react';
+import React from 'react';
 
 
-export default class MenuHome extends Component {
-  render() {
-    return (
-      <View style={styles.containerMenu}>
-        <TouchableOpacity>
-          <View style={styles.menu1}>
-            <Image source={require('../../../../assets/img/renovation.png')} />
-            <Text style={styles.textMenu}>Renovasi</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <View style={styles.menu2}>
-            <Image source={require('../../../../assets/img/newbuilding.png')} />
-            <Text style={styles.textMenu}>Pembuatan Baru</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
-    )
-  }
+const MenuHome = ({ navigation }) => {
+  return (
+    <View style={styles.containerMenu}>
+      <TouchableOpacity onPress={() => navigation.navigate('Renovasi')}>
+        <View style={styles.menu1}>
+          <Image source={require('../../../../assets/img/renovation.png')} />
+          <Text style={styles.textMenu}>Renovasi</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <View style={styles.menu2}>
+          <Image source={require('../../../../assets/img/newbuilding.png')} />
+          <Text style={styles.textMenu}>Pembuatan Baru</Text>
+        </View>
+      </TouchableOpacity>
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
@@ -39,7 +37,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-
+    padding: 20,
     elevation: 5,
   },
   menu2: {
@@ -50,8 +48,8 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-
     elevation: 5,
+    padding: 20
   },
   textMenu: {
     textAlign: "center",
@@ -60,3 +58,5 @@ const styles = StyleSheet.create({
     borderRadius: 35
   }
 })
+
+export default MenuHome;

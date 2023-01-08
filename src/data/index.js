@@ -2,5 +2,6 @@
 // export * from './dummyJerseys'
 export * from './menus'
 export * from './dummyProfile'
+export * from './menuService'
 // export * from './dummyPesanans'
 // export * from './couriers'

@@ -5,8 +5,8 @@ import { Banner1, Banner2 } from '../../../../assets';
 
 const screenWidth = Math.round(Dimensions.get('window').width);
 const images = [
-    'https://i.ibb.co/mbQ1wHS/slider1.png',
-    'https://i.ibb.co/gPQ8C8B/slider2.png',
+    'https://i.ibb.co/hmzn4hS/banner1.jpg',
+    'https://i.ibb.co/7QRnP8d/banner2.jpg'
 ]
 
 const BannerSlider = () => {

@@ -6,7 +6,7 @@ import { colors } from '../../../../assets';
 
 const CardMenu = ({ menu, navigation }) => {
     return (
-        <TouchableOpacity style={styles.container} >
+        <TouchableOpacity style={styles.container} onPress={() => navigation.navigate(menu.halaman)}>
             <View style={styles.menu}>
                 {menu.gambar}
                 <Text style={styles.text}>{menu.nama}</Text>
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         marginTop: 15,
         justifyContent: 'space-between',
-        backgroundColor: colors.lightPrimaryColor,
+        backgroundColor: 'white',
         shadowOffset: {
             width: 0,
             height: 2,
