@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, StatusBar } from 'react-native'
 import React, { Component } from 'react'
 import { colors } from '../../../assets';
 import { BannerSlider, HeaderHome } from '../../components';
@@ -17,6 +17,7 @@ export default class Home extends Component {
     render() {
         return (
             <View style={styles.page}>
+                <StatusBar barStyle='dark-content' animated />
                 <View style={styles.header}>
                     <HeaderHome />
                 </View>

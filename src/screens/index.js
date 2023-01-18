@@ -8,6 +8,7 @@ import Profile from "./Profile";
 import EditProfile from "./EditProfile";
 import RenovasiMenu from './RenovasiMenu';
 import BaruMenu from './BaruMenu';
+import DetailPekerjaan from "./DetailPekerjaan";
+import DetailWaktuKerja from "./DetailWaktuKerja";
 
-
-export { Splash, Welcome, Register, Login, Home, Profile, Order, EditProfile, RenovasiMenu, BaruMenu };
+export { Splash, Welcome, Register, Login, Home, Profile, Order, EditProfile, RenovasiMenu, BaruMenu, DetailPekerjaan, DetailWaktuKerja };

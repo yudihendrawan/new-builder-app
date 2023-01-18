@@ -1,6 +1,6 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Splash, Home, Profile, Order, Login, Register, EditProfile, RenovasiMenu, BaruMenu } from "../screens";
+import { Splash, Home, Profile, Order, Login, Register, EditProfile, RenovasiMenu, BaruMenu, DetailPekerjaan, DetailWaktuKerja } from "../screens";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { BottomNavigator } from "../components";
 
@@ -26,8 +26,10 @@ const Router = () => {
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="MainApp" component={MainApp} options={{ headerShown: false, title: false }} />
             <Stack.Screen name="EditProfile" component={EditProfile} options={{ title: 'Edit Profile' }} />
-            <Stack.Screen name="Renovasi" component={RenovasiMenu} options={{ title: 'Renovasi' }} />
-            <Stack.Screen name="Baru" component={BaruMenu} options={{ title: 'Baru' }} />
+            <Stack.Screen name="Renovasi" component={RenovasiMenu} options={{ title: false }} />
+            <Stack.Screen name="DetailPekerjaan" component={DetailPekerjaan} options={{ title: false }} />
+            <Stack.Screen name="DetailWaktuKerja" component={DetailWaktuKerja} options={{ title: false }} />
+            <Stack.Screen name="Baru" component={BaruMenu} options={{ title: false }} />
         </Stack.Navigator>
     );
 };

@@ -26,6 +26,7 @@ const Inputan = ({
                     value={value}
                     onChangeText={onChangeText}
                     editable={disabled ? false : true}
+                    placeholder={placeholder}
                 />
             </View>
         );
@@ -40,6 +41,7 @@ const Inputan = ({
                 keyboardType={keyboardType}
                 onChangeText={onChangeText}
                 editable={disabled ? false : true}
+                placeholder={placeholder}
             />
         </View>
     );
@@ -50,6 +52,8 @@ export default Inputan;
 const styles = StyleSheet.create({
     container: {
         marginTop: 10,
+        marginHorizontal: 15,
+
     },
     label: (fontSize) => ({
         fontSize: fontSize ? fontSize : 18,
@@ -61,17 +65,29 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 10,
         borderColor: colors.divider,
-        paddingVertical: 5,
+        paddingVertical: 15,
         paddingHorizontal: 10,
+        backgroundColor: 'white',
+        marginTop: 5,
+        shadowColor: 'black',
+        shadowOffset: { width: 2, height: 2 },
+        shadowOpacity: 0.5,
+        shadowRadius: 4,
+        elevation: 4,
     }),
     inputTextArea: (fontSize) => ({
         fontSize: fontSize ? fontSize : 18,
-        fontFamily: fonts.primary.regular,
         borderWidth: 1,
         borderRadius: 5,
         borderColor: colors.divider,
-        paddingVertical: 5,
+        paddingVertical: 50,
+        backgroundColor: 'white',
         paddingHorizontal: 10,
         textAlignVertical: 'top',
+        shadowColor: 'black',
+        shadowOffset: { width: 2, height: 2 },
+        shadowOpacity: 0.5,
+        shadowRadius: 4,
+        elevation: 4,
     }),
 });
